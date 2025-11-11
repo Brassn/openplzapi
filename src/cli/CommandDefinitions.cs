@@ -29,15 +29,17 @@ namespace OpenPlzApi.CLI
         {
             var command = new Command("importdb", "Imports public data to the OpenPLZ API database")
             {
-                new Option<ImportSource>(["--source", "-s"], "Name of data source")
+                new Option<ImportSource>("--source", "-s")
                 {
-                    IsRequired = true
+                    Description = "Name of data source",
+                    Required = true
                 }
             };
 
-            command.SetHandler(async (ImportSource source)
-                => await CommandHandlers.ImportDb(appConfiguration, source),
-                    command.Options[0] as Option<ImportSource>);
+            command.SetAction(async parseResult => await CommandHandlers.ImportDb(
+                appConfiguration,
+                parseResult.GetValue(command.Options[0] as Option<ImportSource>))
+            );
 
             return command;
         }
@@ -46,15 +48,17 @@ namespace OpenPlzApi.CLI
         {
             var command = new Command("initdb", "Creates or migrates an OpenPLZ API database")
             {
-                new Option<bool>(["--import", "-i"], "Imports public data")
+                new Option<bool>("--import", "-i")
                 {
-                    IsRequired = false
+                    Description = "Imports public data",
+                    Required = false
                 }
             };
 
-            command.SetHandler(async (bool import)
-                => await CommandHandlers.InitDb(appConfiguration, import),
-                    command.Options[0] as Option<bool>);
+            command.SetAction(async parseResult => await CommandHandlers.InitDb(
+                appConfiguration,
+                parseResult.GetValue(command.Options[0] as Option<bool>))
+            );
 
             return command;
         }

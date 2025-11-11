@@ -28,9 +28,10 @@ namespace OpenPlzApi.CLI.Sources.DE
     {
         public static Guid? GetMunicipalAssociationUniqueId(this Municipality record)
         {
-            // Municipalities with an association code == "0000" or with
+            // Municipalities with an association code "0000", "9999" or with
             // association code == municipality.code are not part of a real municipal association
-            if (record.Association != "0000" && 
+            if (record.Association != "0000" &&
+                record.Association != "9999" &&
                 record.Association.Substring(1, 3) != record.RegionalCode.Substring(5, 3))
             {
                 return IdFactory.CreateIdFromValue($"{record.RegionalCode.AsSpan(0, 5)}{record.Association}");
