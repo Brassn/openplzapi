@@ -28,7 +28,7 @@ namespace OpenPlzApi.CLI
 {
     class Program
     {
-        static async Task Main(string[] args)
+        public static async Task<int> Main(string[] args)
         {
             // Console window title
             Console.Title = AssemblyInfo.GetTitle();
@@ -51,7 +51,8 @@ namespace OpenPlzApi.CLI
             };
 
             // Parse the incoming args and invoke the handler
-            await rootCommand.InvokeAsync(args);
+            var parseResult = rootCommand.Parse(args);
+            return await parseResult.InvokeAsync();
         }
     }
 }
