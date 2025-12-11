@@ -19,11 +19,11 @@
  */
 #endregion
 
-using ICSharpCode.SharpZipLib.Zip;
 using Microsoft.EntityFrameworkCore;
 using OpenPlzApi.DataLayer;
 using OpenPlzApi.DataLayer.CH;
 using System;
+using System.IO.Compression;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
@@ -66,13 +66,11 @@ namespace OpenPlzApi.CLI.CH
 
             if (!_cachedSourceFile.Exists)
             {
-
                 _consoleWriter.StartProgress($"Extract {_cachedSourceFile.Name}");
 
                 Directory.CreateDirectory(_cachedSourceFile.DirectoryName);
 
-                var fastZip = new FastZip();
-                fastZip.ExtractZip(_cachedZipArchive.FullName, _cachedSourceFile.DirectoryName, null);
+                await ZipFile.ExtractToDirectoryAsync(_cachedZipArchive.FullName, _cachedSourceFile.DirectoryName, cancellationToken);
 
                 _consoleWriter.FinishProgress();
             }

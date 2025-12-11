@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Project Path="src/cli/OpenPlzApi.CLI.csproj" />
+  <Project Path="src/datalayer/OpenPlzApi.DataLayer.csproj" />
+  <Project Path="src/webservice/OpenPlzApi.WebService.csproj">
+    <Build Project="false" />
+  </Project>
+  <Project Path="test/cli/Xunit/OpenPlzApi.CLI.XUnit.csproj" />
+</Solution>

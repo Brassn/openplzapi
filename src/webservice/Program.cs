@@ -23,7 +23,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Net.Http.Headers;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using OpenPlzApi;
 using OpenPlzApi.DataLayer;
 using System.Collections;
@@ -79,7 +79,6 @@ builder.Services.AddProblemDetails();
 
 // Add Swagger/OpenAPI support
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddDateOnlyTimeOnlyStringConverters();
 builder.Services.AddSwaggerGen(setup =>
 {
     setup.SwaggerDoc("v1",
