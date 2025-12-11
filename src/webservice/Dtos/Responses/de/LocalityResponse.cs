@@ -49,7 +49,6 @@ namespace OpenPlzApi.DE
         /// <summary>
         /// Reference to district (Kreis)
         /// </summary>
-        [Required]
         [JsonPropertyOrder(4)]
         public DistrictSummary District { get; }
 

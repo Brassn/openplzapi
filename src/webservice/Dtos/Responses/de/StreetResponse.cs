@@ -69,14 +69,12 @@ namespace OpenPlzApi.DE
         /// <summary>
         /// Borough (Stadtbezirk)
         /// </summary>
-        [Required]
         [JsonPropertyOrder(4)]
         public string Borough { get; }
 
         /// <summary>
         /// Reference to district (Kreis)
         /// </summary>
-        [Required]
         [JsonPropertyOrder(7)]
         public DistrictSummary District { get; }
 
@@ -121,7 +119,6 @@ namespace OpenPlzApi.DE
         /// <summary>
         /// Suburb (Stadtteil)
         /// </summary>
-        [Required]
         [JsonPropertyOrder(5)]
         public string Suburb { get; }
     }
