@@ -53,7 +53,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Communes", x => x.Id);
+                    table.PrimaryKey("PK_Communes1", x => x.Id);
                 },
                 comment: "Representation of a Liechtenstein commune (Gemeinde)");
 
@@ -102,7 +102,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Districts", x => x.Id);
+                    table.PrimaryKey("PK_Districts1", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Districts_Cantons_CantonId",
                         column: x => x.CantonId,
@@ -131,7 +131,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FullTextStreets", x => x.Id);
+                    table.PrimaryKey("PK_FullTextStreets3", x => x.Id);
                     table.ForeignKey(
                         name: "FK_FullTextStreets_Communes_CommuneId",
                         column: x => x.CommuneId,
@@ -154,7 +154,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Localities", x => x.Id);
+                    table.PrimaryKey("PK_Localities3", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Localities_Communes_CommuneId",
                         column: x => x.CommuneId,
@@ -251,7 +251,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Streets", x => x.Id);
+                    table.PrimaryKey("PK_Streets3", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Streets_Localities_LocalityId",
                         column: x => x.LocalityId,
@@ -304,7 +304,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Districts", x => x.Id);
+                    table.PrimaryKey("PK_Districts2", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Districts_FederalStates_FederalStateId",
                         column: x => x.FederalStateId,
@@ -339,7 +339,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FullTextStreets", x => x.Id);
+                    table.PrimaryKey("PK_FullTextStreets1", x => x.Id);
                     table.ForeignKey(
                         name: "FK_FullTextStreets_Communes_CommuneId",
                         column: x => x.CommuneId,
@@ -362,7 +362,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Localities", x => x.Id);
+                    table.PrimaryKey("PK_Localities1", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Localities_Communes_CommuneId",
                         column: x => x.CommuneId,
@@ -462,7 +462,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Streets", x => x.Id);
+                    table.PrimaryKey("PK_Streets1", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Streets_Localities_LocalityId",
                         column: x => x.LocalityId,
@@ -514,7 +514,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Municipalities", x => x.Id);
+                    table.PrimaryKey("PK_Municipalities1", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Municipalities_Districts_DistrictId",
                         column: x => x.DistrictId,
@@ -555,7 +555,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FullTextStreets", x => x.Id);
+                    table.PrimaryKey("PK_FullTextStreets2", x => x.Id);
                     table.ForeignKey(
                         name: "FK_FullTextStreets_Municipalities_MunicipalityId",
                         column: x => x.MunicipalityId,
@@ -577,7 +577,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Localities", x => x.Id);
+                    table.PrimaryKey("PK_Localities2", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Localities_Municipalities_MunicipalityId",
                         column: x => x.MunicipalityId,
@@ -600,7 +600,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Streets", x => x.Id);
+                    table.PrimaryKey("PK_Streets2", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Streets_Localities_LocalityId",
                         column: x => x.LocalityId,

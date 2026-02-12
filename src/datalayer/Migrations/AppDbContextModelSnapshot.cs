@@ -18,7 +18,7 @@ namespace OpenPlzAPI.DataLayer.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.3")
+                .HasAnnotation("ProductVersion", "10.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -379,7 +379,8 @@ namespace OpenPlzAPI.DataLayer.Migrations
                         .HasColumnType("text")
                         .HasComment("Short name (Bezirksname, kurz)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_Districts1");
 
                     b.HasIndex("CantonId");
 
@@ -434,7 +435,8 @@ namespace OpenPlzAPI.DataLayer.Migrations
                         .HasColumnType("integer")
                         .HasComment("Status (Straßenstatus)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_FullTextStreets1");
 
                     b.HasIndex("CommuneId");
 
@@ -470,7 +472,8 @@ namespace OpenPlzAPI.DataLayer.Migrations
                         .HasColumnType("text")
                         .HasComment("Postal code (Postleitzahl)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_Localities1");
 
                     b.HasIndex("CommuneId", "PostalCode", "Name")
                         .IsUnique();
@@ -506,7 +509,8 @@ namespace OpenPlzAPI.DataLayer.Migrations
                         .HasColumnType("integer")
                         .HasComment("Status (Straßenstatus)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_Streets1");
 
                     b.HasIndex("LocalityId")
                         .HasDatabaseName("IX_Streets_LocalityId1");
@@ -554,7 +558,8 @@ namespace OpenPlzAPI.DataLayer.Migrations
                         .HasColumnType("integer")
                         .HasComment("Type (Kreiskennzeichen)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_Districts2");
 
                     b.HasIndex("FederalStateId");
 
@@ -643,7 +648,8 @@ namespace OpenPlzAPI.DataLayer.Migrations
                         .HasColumnType("text")
                         .HasComment("Suburb (Orts- oder Stadtteil)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_FullTextStreets2");
 
                     b.HasIndex("MunicipalityId")
                         .HasDatabaseName("IX_FullTextStreets_MunicipalityId1");
@@ -718,7 +724,8 @@ namespace OpenPlzAPI.DataLayer.Migrations
                         .HasColumnType("text")
                         .HasComment("Postal code (Postleitzahl)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_Localities2");
 
                     b.HasIndex("MunicipalityId", "PostalCode", "Name")
                         .IsUnique();
@@ -818,7 +825,8 @@ namespace OpenPlzAPI.DataLayer.Migrations
                         .HasColumnType("integer")
                         .HasComment("Type (Gemeindekennzeichen)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_Municipalities1");
 
                     b.HasIndex("AssociationId");
 
@@ -860,7 +868,8 @@ namespace OpenPlzAPI.DataLayer.Migrations
                         .HasColumnType("text")
                         .HasComment("Suburb (Orts- oder Stadtteil)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_Streets2");
 
                     b.HasIndex("LocalityId")
                         .HasDatabaseName("IX_Streets_LocalityId2");
@@ -895,7 +904,8 @@ namespace OpenPlzAPI.DataLayer.Migrations
                         .HasColumnType("text")
                         .HasComment("Name (Amtlicher Gemeindename)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_Communes1");
 
                     b.HasIndex("Key")
                         .IsUnique()
@@ -949,7 +959,8 @@ namespace OpenPlzAPI.DataLayer.Migrations
                         .HasColumnType("integer")
                         .HasComment("Status (Straßenstatus)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_FullTextStreets3");
 
                     b.HasIndex("CommuneId")
                         .HasDatabaseName("IX_FullTextStreets_CommuneId1");
@@ -986,7 +997,8 @@ namespace OpenPlzAPI.DataLayer.Migrations
                         .HasColumnType("text")
                         .HasComment("Postal code (Postleitzahl)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_Localities3");
 
                     b.HasIndex("CommuneId", "PostalCode", "Name")
                         .IsUnique()
@@ -1023,7 +1035,8 @@ namespace OpenPlzAPI.DataLayer.Migrations
                         .HasColumnType("integer")
                         .HasComment("Status (Straßenstatus)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_Streets3");
 
                     b.HasIndex("LocalityId")
                         .HasDatabaseName("IX_Streets_LocalityId3");
