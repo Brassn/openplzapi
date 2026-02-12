@@ -23,7 +23,6 @@ using OpenPlzApi.DataLayer.DE;
 using Swashbuckle.AspNetCore.Annotations;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
-using Microsoft.OpenApi;
 
 namespace OpenPlzApi.DE
 {
